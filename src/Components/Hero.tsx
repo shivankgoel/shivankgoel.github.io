@@ -48,7 +48,7 @@ export const Hero = (): JSX.Element => {
 
                         Ready for a wild ride? Let's geek out together! 🚀
                     </Text>
-                    <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} marginTop={3}>
+                    <Stack direction={{ base: 'row', sm: 'row' }} spacing={4} marginTop={3}>
                         {/* <Button
                             rounded={'full'}
                             bg={'blue.500'}
