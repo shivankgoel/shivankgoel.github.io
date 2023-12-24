@@ -7,6 +7,7 @@ import { extendTheme } from '@chakra-ui/react'
 import "@fontsource/caveat";
 import "@fontsource/heebo";
 import "@fontsource/coming-soon";
+import { Helmet } from "react-helmet";
 
 const theme = extendTheme({
   fonts: {
@@ -19,6 +20,10 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <div className="App">
+        <Helmet>
+          <title>Shivank Goel</title>
+          <meta name="description" content="A software engineer and wannapreneur working in GenAI space." />
+        </Helmet>
         <HomePage />
       </div>
     </ChakraProvider>
