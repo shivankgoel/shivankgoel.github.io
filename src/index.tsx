@@ -1,15 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import { HomePage } from './Pages/HomePage';
+import { extendTheme } from '@chakra-ui/react'
+import "@fontsource/caveat";
+import "@fontsource/heebo";
+import "@fontsource/coming-soon";
+import { Helmet } from "react-helmet";
+import { Leetcode } from './Pages/Leetcode';
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'Caveat', sans-serif`,
+    body: `'Coming Soon', sans-serif`,
+  }
+})
+
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/leetcode",
+    element: <Leetcode />
+  }
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Helmet>
+      <title>Shivank Goel</title>
+      <meta name="description" content="A software engineer and wannapreneur working in GenAI space." />
+    </Helmet>
+    <ChakraProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </React.StrictMode>
 );
 

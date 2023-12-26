@@ -18,6 +18,7 @@ import {
     Center,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { useNavigate } from "react-router-dom";
 
 interface Props {
     children: React.ReactNode
@@ -45,19 +46,26 @@ const NavLink = (props: Props) => {
 export function Nav() {
     const { colorMode, toggleColorMode } = useColorMode()
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const navigate = useNavigate();
 
     useEffect(() => {
-        toggleColorMode()
+        if (colorMode === 'light') {
+            toggleColorMode()
+        }
     }, []);
 
     return (
         <>
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={20} py={1} >
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                    <Box><Text fontSize='xl'>Shivank Goel</Text></Box>
+                    <Stack direction={{ base: 'row' }} spacing={16}>
+                        <Box><Text fontSize='xl' onClick={() => navigate("/")}>Shivank Goel</Text></Box>
+                        <Box><Text fontSize='xl' onClick={() => navigate("/leetcode")}>Leetcode</Text></Box>
+                        {/* <Box><Text fontSize='xl'>Leetcode</Text></Box> */}
+                    </Stack>
 
                     <Flex alignItems={'center'}>
-                        <Stack direction={'row'} spacing={7}>
+                        <Stack dir={'row'} spacing={7}>
                             <Button onClick={toggleColorMode}>
                                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                             </Button>
