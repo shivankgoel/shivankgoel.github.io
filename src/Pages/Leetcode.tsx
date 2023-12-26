@@ -27,6 +27,7 @@ import {
 } from '@tanstack/match-sorter-utils';
 
 import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface Question {
     difficulty: string;
@@ -45,6 +46,9 @@ export const Leetcode = (): JSX.Element => {
     const [hardList, setHardList] = useState<Question[]>([]);
     const [data, setData] = useState<Question[]>([]);
     const [sorting, setSorting] = useState<SortingState>([]);
+    const [tabIndex, setTabIndex] = useState(0);
+    const { hash } = useLocation();
+    const navigate = useNavigate();
 
     const parse_questions = (difficulty: string, questions_list: string[]): Question[] => {
         return questions_list.map((item, index) => {
@@ -127,16 +131,38 @@ export const Leetcode = (): JSX.Element => {
         onSortingChange: setSorting,
     });
 
+    useEffect(() => {
+        let idx = 0;
+        switch (hash) {
+            case "#easy": idx = 0; break;
+            case "#medium": idx = 1; break;
+            case "#hard": idx = 2; break;
+            case "#all": idx = 3; break;
+            default: idx = 0;
+        }
+        if (idx !== tabIndex) {
+            setTabIndex(idx);
+        }
+    }, [hash]);
+
     return (
         <Stack>
             <Nav />
             <Stack p={16} spacing={3} fontSize={"xl"}>
-                <Tabs variant='enclosed'>
-                    <TabList>
-                        <Tab fontSize={"xl"} onClick={() => setData(easyList)} defaultChecked>Easy</Tab>
-                        <Tab fontSize={"xl"} onClick={() => setData(mediumList)}>Medium</Tab>
-                        <Tab fontSize={"xl"} onClick={() => setData(hardList)}>Hard</Tab>
-                        <Tab fontSize={"xl"} onClick={() => setData([...easyList, ...mediumList, ...hardList])}>All</Tab>
+                <Tabs variant='enclosed' index={tabIndex} onChange={(index) => {
+                    setTabIndex(index);
+                    switch (index) {
+                        case 0: navigate('#easy'); break;
+                        case 1: navigate('#medium'); break;
+                        case 2: navigate('#hard'); break;
+                        default: navigate('#all');
+                    }
+                }}>
+                    <TabList >
+                        <Tab fontSize={"xl"} onClick={() => setData(easyList)} id="easy">Easy</Tab>
+                        <Tab fontSize={"xl"} onClick={() => setData(mediumList)} id="medium">Medium</Tab>
+                        <Tab fontSize={"xl"} onClick={() => setData(hardList)} id="hard">Hard</Tab>
+                        <Tab fontSize={"xl"} onClick={() => setData([...easyList, ...mediumList, ...hardList])} id="all">All</Tab>
                     </TabList>
                 </Tabs>
                 <TableContainer>
