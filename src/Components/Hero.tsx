@@ -26,7 +26,7 @@ export const Hero = (): JSX.Element => {
                             position={'relative'}
                             fontSize={'4xl'}
                         >
-                            Hey Stalker!
+                            Welcome!
                         </Text>
                         <br />{' '}
                         {/* <Text color={'blue.500'} as={'span'}>
