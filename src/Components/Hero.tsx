@@ -26,7 +26,7 @@ export const Hero = (): JSX.Element => {
                             position={'relative'}
                             fontSize={'4xl'}
                         >
-                            Welcome!
+                            Welcome To My Page!
                         </Text>
                         <br />{' '}
                         {/* <Text color={'blue.500'} as={'span'}>
@@ -34,19 +34,15 @@ export const Hero = (): JSX.Element => {
                         </Text>{' '} */}
                     </Heading>
                     <Text fontSize={{ base: 'xl', lg: '2xl' }} color={useColorModeValue('gray.900', 'white.500')} align={"left"} p={1} marginTop={2}>
-                        I'm Shivank Goel, your techie friend. Started my tech gig with bachelors in CS at IIT Delhi,
-                        then jet-setted to Cornell University, NY for more geeky thrills. <br /> <br />
+                        Hi, I’m Shivank Goel—an engineer who thrives at the intersection of scalable systems and cutting-edge AI. I started my journey in computer science at IIT Delhi, followed by a master’s at Cornell University. Since 2020, I’ve been building large-scale backend and AI infrastructure at Amazon Web Services.
 
-                        Since 2020, I've been knee-deep in coding chaos at Amazon, currently killing it in the <Link href="https://aws.amazon.com/bedrock/agents/" isExternal><i>AWS Bedrock Agents</i> <ExternalLinkIcon mx='2px' /></Link> team,
-                        trying to cook up radical solutions for GenAI agents because, honestly, who wants to be basic? <br /> <br />
+At AWS, I currently work on <Link href="https://aws.amazon.com/bedrock/agents/" isExternal><i>Bedrock Agents</i> <ExternalLinkIcon mx='2px' /></Link>, where I lead initiatives to make Generative AI agents reliable, secure, and production-ready. My work spans designing multi-tenant agent orchestration systems, building persistent memory for agent experiences, and scaling async workflows across millions of user sessions. I’ve led multiple high-impact projects end-to-end, collaborating closely with principal engineers, product teams, and research scientists.
 
-                        In the tech realm, I vibe with distributed system designs, machine learning infrastructure, and the never ending realm of data storage.
-                        A wannapreneur at heart, always hustling on exciting side projects. Let's chat cool ideas over a virtual coffee! ☕ <br /> <br />
+My technical focus includes distributed systems, ML infrastructure, and event-driven architectures. I enjoy diving deep into protocol design, secure data flows, and long-running AI workflows. Outside of work, I’m a wannapreneur who loves tinkering with side projects, exploring new tech stacks, and mentoring early-career engineers.
 
-                        Outside the tech hustle, find me knocking the birdies in the badminton court, dancing like no one's watching, creating content
-                        and binging on epic James Bond marathons. Yep, that's my jam! <br /> <br />
+When I’m not engineering systems or wrangling AI pipelines, you’ll find me playing badminton, dancing, creating content, or rewatching Bond films with unhealthy enthusiasm.
 
-                        Ready for a wild ride? Let's geek out together! 🚀
+Let’s connect—tech, side hustles, or just ideas over virtual coffee. 🚀
                     </Text>
                     <Stack direction={{ base: 'row', sm: 'row' }} spacing={4} marginTop={3}>
                         {/* <Button
@@ -59,12 +55,8 @@ export const Hero = (): JSX.Element => {
                             Create Project
                         </Button>
                         <Button rounded={'full'}>How It Works</Button> */}
-                        <SocialIcon network="linkedin" url="https://www.linkedin.com/in/goelshivank12/" />
+                        <SocialIcon network="linkedin" url="https://www.linkedin.com/in/shivankgoeliitd/" />
                         <SocialIcon network="github" url="https://github.com/shivankgoel" />
-                        <SocialIcon network="youtube" url="https://www.youtube.com/@csfolks" />
-                        <SocialIcon network="medium" url="https://medium.com/@goelshivank12" />
-                        <SocialIcon network="discord" url="https://discord.gg/q6bh6gYgyu" />
-                        <SocialIcon network="instagram" url="https://www.instagram.com/cs.folks" />
                     </Stack>
                 </Stack>
             </Flex>
