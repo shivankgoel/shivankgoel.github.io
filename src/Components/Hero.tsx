@@ -33,17 +33,35 @@ export const Hero = (): JSX.Element => {
                             Design Projects
                         </Text>{' '} */}
                     </Heading>
-                    <Text fontSize={{ base: 'xl', lg: '2xl' }} color={useColorModeValue('gray.900', 'white.500')} align={"left"} p={1} marginTop={2}>
-                        Hi, I’m Shivank Goel—an engineer who thrives at the intersection of scalable systems and cutting-edge AI. I started my journey in computer science at IIT Delhi, followed by a master’s at Cornell University. Since 2020, I’ve been building large-scale backend and AI infrastructure at Amazon Web Services.
-
-At AWS, I currently work on <Link href="https://aws.amazon.com/bedrock/agents/" isExternal><i>Bedrock Agents</i> <ExternalLinkIcon mx='2px' /></Link>, where I lead initiatives to make Generative AI agents reliable, secure, and production-ready. My work spans designing multi-tenant agent orchestration systems, building persistent memory for agent experiences, and scaling async workflows across millions of user sessions. I’ve led multiple high-impact projects end-to-end, collaborating closely with principal engineers, product teams, and research scientists.
-
-My technical focus includes distributed systems, ML infrastructure, and event-driven architectures. I enjoy diving deep into protocol design, secure data flows, and long-running AI workflows. Outside of work, I’m a wannapreneur who loves tinkering with side projects, exploring new tech stacks, and mentoring early-career engineers.
-
-When I’m not engineering systems or wrangling AI pipelines, you’ll find me playing badminton, dancing, creating content, or rewatching Bond films with unhealthy enthusiasm.
-
-Let’s connect—tech, side hustles, or just ideas over virtual coffee. 🚀
+                    <Text
+                        fontSize={{ base: 'xl', lg: '2xl' }}
+                        color={useColorModeValue('gray.900', 'white.500')}
+                        align="left"
+                        p={1}
+                        marginTop={2}
+                    >
+                        Hi, I’m Shivank Goel.
+                        I’m a backend and infrastructure engineer focused on scalable systems, ML workflows, and production-grade Generative AI.
+                        I studied computer science at IIT Delhi and earned my master’s from Cornell University. Since 2020, I’ve been building distributed infrastructure at Amazon Web Services.
+                        <br />
+                        <br />
+                        Currently, I work on <Link href="https://aws.amazon.com/bedrock/agents/" isExternal><i>Bedrock Agents</i> <ExternalLinkIcon mx="2px" /></Link>,
+                        where I lead efforts to make GenAI agents reliable, secure, and scalable. My work includes multi-tenant orchestration systems,
+                        persistent memory backends for agent experiences, and async workflows running across millions of sessions.
+                        I regularly collaborate with principal engineers, applied scientists, and product teams to take systems from concept to launch.
+                        <br />
+                        <br />
+                        My technical interests span distributed systems, ML/AI infrastructure, and secure event-driven architectures.
+                        I enjoy working on long-horizon agent workflows, memory-persisted reasoning flows, and real-world infra problems at the edge of AI and scale.
+                        <br />
+                        <br />
+                        I occasionally prototype agent frameworks and infra tools, mentor early-career engineers, and explore new backend stacks.
+                        More side projects and content will be added here soon.
+                        <br />
+                        <br />
+                        If you're working on adjacent problems—or just want to trade ideas—reach out. Always open to thoughtful conversations. 🚀
                     </Text>
+
                     <Stack direction={{ base: 'row', sm: 'row' }} spacing={4} marginTop={3}>
                         {/* <Button
                             rounded={'full'}
